@@ -14,15 +14,14 @@ def encode_password(password):
 
 
 def decode_password(password):
-    if len(password) != 8 or not password.isdigit():
-        return "Invalid password format."
+    if len(password) != 8 or not password.isnumeric():
+        return 'Invalid password format.'
 
-    decoded_password = ""
+    decoded_pass = ''
     for digit in password:
-        new_digit = str((int(digit) - 3) % 10)
-        decoded_password += new_digit
+        decoded_pass += str((int(digit) - 3) % 10)
 
-    return decoded_password
+    return decoded_pass
 
 
 
